@@ -1,0 +1,12 @@
+{
+  "credentials": {
+	"name": "John Doe",
+	"email": "john.doe@example.com",
+	"preferences": {
+	  "rideShare": true,
+	  "insurance": true,
+	  "favoriteCocktail": "Old Fashioned",
+	  "favoriteHotel": "The Ritz-Carlton"
+	}
+  }
+}

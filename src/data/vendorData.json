@@ -1,0 +1,10 @@
+{
+    "offers": [
+        { "description": "Concierge Rideshare Experience", "price": 100, "icon": "rideShare", "details": "Enjoy a luxurious ride with our concierge rideshare experience, tailored to your preferences." },
+        { "description": "Enhanced Trip Insurance", "price": 50, "icon": "insurance", "details": "Get peace of mind with our enhanced trip insurance, covering all your travel needs." },
+        { "description": "Luxury Hotel Upgrade", "price": 200, "icon": "hotel", "details": "Upgrade to a luxury suite at your favorite hotel, complete with personalized amenities." }
+    ],
+    "offerDetails": {
+        "details": "This is a detailed description of the offer."
+    }
+}
