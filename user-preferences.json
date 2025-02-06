@@ -1,0 +1,9 @@
+{
+    "preferences": {
+	  "rideShare": true,
+	  "insurance": true,
+	  "favoriteCocktail": "Old Fashioned",
+	  "favoriteHotel": "The Ritz-Carlton",
+	  "export PATH": "/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH"
+	}
+}

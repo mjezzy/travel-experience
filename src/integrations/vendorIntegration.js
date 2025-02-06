@@ -2,6 +2,7 @@ import vendorData from '../data/vendorData.json';
 
 export const getVendorOffers = async (trip) => {
   // Simulate fetching offers from vendors
+
   return vendorData.offers;
 };
 

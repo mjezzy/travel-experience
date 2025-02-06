@@ -1,17 +1,8 @@
 import React from 'react';
 import HomeScreen from './components/HomeScreen';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-});
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './theme/theme';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const App = () => {
   return (

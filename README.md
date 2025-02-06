@@ -1,3 +1,59 @@
+# Server-side setup
+Services folder needs to be extracted to Node service / separate repo.
+
+## Register client
+#TODO:  see about removing --legacy-peer-deps...
+
+1. `npm install @inrupt/solid-client-authn-node --legacy-peer-deps`
+
+2. `npm install @inrupt/solid-client-access-grants --legacy-peer-deps`
+
+3. Update .env.local w/ id and secret
+
+
+## Start Expo Go
+1. `npx expo start`
+
+2. press `s` to switch to development build
+
+3. if haven't set up yet, copy 'exp' URL ("Metro waiting on..") and paste into Simulator. (click - ctrl+v doesnt work on simulator)
+
+if set up already, choose inrupt wallet (has star) on home screen
+
+Be patient, loading pod spaces screen can take some time.
+
+Login
+
+## Issue access request
+`node walletProviderService.js` (TODO: update this)
+
+Check Inrupt wallet app > Requests > <Refresh>
+
+## Grant access request
+
+## Revoke access grant
+
+
+# Questions
+- How to broker on behalf of user and skip the "Inbox"?
+- 
+
+
+# TO-DO
+- Upgrade to latest Inrupt version
+- Create additional account for app / host
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

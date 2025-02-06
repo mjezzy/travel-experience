@@ -2,11 +2,25 @@
   "credentials": {
 	"name": "John Doe",
 	"email": "john.doe@example.com",
-	"preferences": {
-	  "rideShare": true,
-	  "insurance": true,
-	  "favoriteCocktail": "Old Fashioned",
-	  "favoriteHotel": "The Ritz-Carlton"
-	}
+	"preferences": [
+		{
+		"id": 1,
+		"name": "Favorite Cocktail",
+		"value": "Old Fashioned",
+		"type": "preference"
+		},
+		{
+		"id": 2,
+		"name": "Favorite Hotel",
+		"value": "The Ritz-Carlton",
+		"type": "preference"
+		},
+		{
+		"id": 3,
+		"name": "Travel Insurance Access",
+		"value": "Premium Coverage",
+		"type": "consent"
+		}
+	]
   }
 }
