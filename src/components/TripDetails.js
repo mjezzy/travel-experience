@@ -6,6 +6,7 @@ import {
 import { Timeline, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector, TimelineContent } from '@mui/lab';
 import ConsentPopup from './ConsentPopup';
 import { getVendorOffers } from '../integrations/vendorIntegration';
+import { getUserData } from '../integrations/walletIntegration';
 import LocalHotelIcon from '@mui/icons-material/LocalHotel';
 import LocalBarIcon from '@mui/icons-material/LocalBar';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
@@ -62,7 +63,8 @@ const TripDetails = ({ trip }) => {
 	setShowConsentPopup(false);
 	setHasConsent(true);
 	try {
-	  const fetchedOffers = await getVendorOffers(trip);
+	  const anonUserData = await getUserData();
+    const fetchedOffers = await getVendorOffers(trip, anonUserData);
 	  // Ensure each offer has a unique id:
 	  const offersWithIds = fetchedOffers.map((offer, index) => ({
 		...offer,

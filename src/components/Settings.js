@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import { NAVY_COLORS } from '../theme/colors';
-import walletData from '../data/walletProviderData.json';
+import walletData from '../mock-data/walletProviderData.json';
 
 const Settings = ({ onClose }) => {
   const [userInfo, setUserInfo] = useState({});

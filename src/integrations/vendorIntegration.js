@@ -1,8 +1,9 @@
-import vendorData from '../data/vendorData.json';
+import vendorData from '../mock-data/vendorData.json';
 
-export const getVendorOffers = async (trip) => {
+export const getVendorOffers = async (trip, anonymizedUserData) => {
   // Simulate fetching offers from vendors
 
+  // todo: Log which data shared to which vendors
   return vendorData.offers;
 };
 

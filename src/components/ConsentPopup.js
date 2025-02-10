@@ -11,9 +11,8 @@ import {
   Radio,
   CircularProgress 
 } from '@mui/material';
-import { getAccessGrantFromRedirectUrl } from "@inrupt/solid-client-access-grants";
-import { sendUserDataToVendor } from '../integrations/vendorIntegration';
 import { NAVY_COLORS } from '../theme/colors';
+import { getUserData } from '../integrations/walletIntegration';
 
 const ConsentPopup = ({ offer, onClose, onAccept }) => {
   const [consentType, setConsentType] = useState('once');
@@ -21,43 +20,13 @@ const ConsentPopup = ({ offer, onClose, onAccept }) => {
 
   const handleConsent = async () => {
     try {
-      setIsLoading(true);
-      console.log('Sending consent request...');
-      
-      // First request to get access request ID
-      const response = await fetch('http://localhost:3001/api/access-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          resourceOwner: 'https://id.inrupt.com/uhrlass',
-          resources: ['https://storage.inrupt.com/70ba5def-6b7a-48d9-ac7f-4649f0cd9460/wallet/user-preferences.json'],
-        }),
-      });
+      // get user data from backend service
+	  setIsLoading(true);
+      console.log('Requesting User Data from backend service...');
+	  const userDataRs = getUserData();
+	  //var parsedRs = parseResponse(userDataRs);
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to connect to the server');
-      }
-
-      const { id } = await response.json();
-      console.log('Received access request ID:', id);
-
-      // Construct URL with ID and get access grant
-      const myURL = new URL('http://localhost:3001/api/access-grant');
-      myURL.searchParams.append('id', id);
-	  console.log('access grant id:', id);
-    //   const myAccessGrantVC = await getAccessGrantFromRedirectUrl(
-    //     myURL,
-    //     { fetch: window.fetch }  // Use authenticated fetch when available
-    //   );
-
-    //   console.log('Access grant received:', myAccessGrantVC);
-      
-    //   const vendorResponse = await sendUserDataToVendor(myAccessGrantVC, offer);
-    //   console.log('Vendor response:', vendorResponse);
-      
+      // get offers from vendor(s) based on user data
       onAccept(offer);
       onClose();
     } catch (error) {

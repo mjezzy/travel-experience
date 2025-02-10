@@ -1,4 +1,4 @@
-# Server-side setup
+# Installation and Setup
 Services folder needs to be extracted to Node service / separate repo.
 
 ## Register client
@@ -9,6 +9,10 @@ Services folder needs to be extracted to Node service / separate repo.
 2. `npm install @inrupt/solid-client-access-grants --legacy-peer-deps`
 
 3. Update .env.local w/ id and secret
+
+
+# Workstation setup
+`open -a Simulator`
 
 
 ## Start Expo Go
